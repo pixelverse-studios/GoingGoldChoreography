@@ -1,0 +1,64 @@
+.Nav {
+    padding: 1rem;
+    background-color: var(--primary-brand-color);
+    color: var(--secondary-brand-color);
+    height: var(--nav-height);
+
+    .navContent {
+        width: 100%;
+        margin: auto;
+        max-width: var(--max-width);
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+
+        .navLogo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 10rem;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            height: 3rem;
+
+            li {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 1.2rem;
+
+                a {
+                    transition: var(--general-hover);
+
+                    &:hover {
+                        color: var(--off-brand-color);
+                    }
+                }
+
+                button {
+                    font-size: 1.2rem;
+                    width: 8rem;
+                    padding: 0.5rem;
+                    background-color: var(--secondary-brand-color);
+                    color: var(--primary-brand-color);
+                    border: 1px solid var(--secondary-brand-color);
+                    border-radius: var(--button-border-radius);
+                    font-weight: bold;
+                    transition: var(--general-hover);
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--primary-brand-color);
+                        color: var(--secondary-brand-color);
+                    }
+                }
+            }
+        }
+    }
+}

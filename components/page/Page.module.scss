@@ -1,0 +1,11 @@
+.PageContainer {
+    height: 100%;
+    background-color: var(--off-brand-color);
+
+    .ContentContainer {
+        height: calc(100% - var(--nav-height));
+        max-width: var(--max-width);
+        width: 100%;
+        margin: auto;
+    }
+}
