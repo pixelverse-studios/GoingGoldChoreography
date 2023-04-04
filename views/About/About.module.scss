@@ -1,0 +1,22 @@
+@use 'styles/mixins/spacing' as PageSpacing;
+@use 'styles/mixins/breakpoints' as breakpoints;
+
+.AboutPage {
+    // background-color: black;
+    height: 100%;
+    // display: grid;
+    // grid-template-rows: 1fr 6rem;
+
+    .meetMe {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include PageSpacing.layout;
+
+        .overlayText {
+        }
+        img {
+            margin: auto;
+            width: 100%;
+        }
+    }
+}
