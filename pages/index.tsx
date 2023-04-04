@@ -1,3 +1,5 @@
-export default function Home() {
-    return <main>test</main>
+const HomePage = () => {
+    return <main>Home</main>
 }
+
+export default HomePage

@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
+import Page from '@/components/page'
 import logo from '@/assets/gg logo.jpg'
 import '@/styles/globals.scss'
 
@@ -19,7 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
                 <link rel="icon" href={logo.src} />
             </Head>
-            <Component {...pageProps} />
+            <Page>
+                <Component {...pageProps} />
+            </Page>
         </>
     )
 }
