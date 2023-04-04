@@ -1,11 +1,12 @@
+@use 'styles/mixins/spacing' as PageSpacing;
+
 .PageContainer {
     height: 100%;
     background-color: var(--off-brand-color);
+    display: grid;
+    grid-template-rows: var(--nav-height) 1fr auto;
 
     .ContentContainer {
-        height: calc(100% - var(--nav-height));
-        max-width: var(--max-width);
-        width: 100%;
-        margin: auto;
+        @include PageSpacing.layout;
     }
 }
