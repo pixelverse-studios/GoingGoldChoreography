@@ -1,10 +1,17 @@
+import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { PopupButton } from 'react-calendly'
+
+import ContactWidget from '../contactWidget'
 import styles from './Nav.module.scss'
 
 const DesktopNavItems = () => {
     const router = useRouter()
     const { pathname: currentPage } = router
+    const [modalVisible, setModalVisible] = useState(false)
+
+    const setModalOpen = () => setModalVisible(true)
 
     return (
         <nav className={styles.Nav}>
@@ -30,10 +37,14 @@ const DesktopNavItems = () => {
                         <Link href="/services">SERVICES</Link>
                     </li>
                     <li>
-                        <button>CONTACT</button>
+                        <button onClick={setModalOpen}>CONTACT</button>
                     </li>
                 </ul>
             </div>
+            <ContactWidget
+                visible={modalVisible}
+                setVisible={setModalVisible}
+            />
         </nav>
     )
 }

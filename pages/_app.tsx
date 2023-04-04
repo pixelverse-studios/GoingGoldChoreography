@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { NextUIProvider } from '@nextui-org/react'
 
 import Page from '@/components/page'
 import logo from '@/assets/gg logo.jpg'
@@ -21,11 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
                 <link rel="icon" href={logo.src} />
             </Head>
-            <NextUIProvider>
-                <Page>
-                    <Component {...pageProps} />
-                </Page>
-            </NextUIProvider>
+            <Page>
+                <Component {...pageProps} />
+            </Page>
         </>
     )
 }

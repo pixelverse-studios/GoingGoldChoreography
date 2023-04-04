@@ -1,4 +1,5 @@
 @use 'styles/mixins/spacing' as PageSpacing;
+@use 'styles/mixins/breakpoints' as breakpoints;
 
 .PageContainer {
     height: 100vh;
@@ -8,5 +9,9 @@
 
     .ContentContainer {
         @include PageSpacing.layout;
+    }
+
+    @include breakpoints.set-max-width('small') {
+        grid-template-rows: var(--mobile-nav-height) 1fr auto;
     }
 }

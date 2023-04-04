@@ -76,7 +76,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-brand-color);
-    height: calc(var(--nav-height) / 2);
+    height: var(--mobile-nav-height);
     padding: 1rem 2rem;
     z-index: 5;
 
@@ -84,12 +84,14 @@
         color: var(--secondary-brand-color);
     }
 
+    margin: 0;
+
     ul {
         z-index: 4;
         overflow: hidden;
         position: absolute;
         left: 0;
-        top: calc(var(--nav-height) / 2);
+        top: var(--mobile-nav-height);
         list-style: none;
         width: 100%;
         background-color: var(--primary-brand-color);
@@ -98,7 +100,7 @@
 
         &.show {
             padding: 1rem;
-            height: 100%;
+            height: var(--mobile-nav-height);
         }
 
         &.hide {
