@@ -4,7 +4,6 @@ import { NextUIProvider } from '@nextui-org/react'
 
 import Page from '@/components/page'
 import logo from '@/assets/gg logo.jpg'
-// import 'antd/dist/antd.css'
 import '@/styles/globals.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
