@@ -19,11 +19,39 @@ const About = () => {
                         AACCA. Judges certification across all levels.
                     </p>
                 </div>
-                <img src={meetMe.src} alt="meetMeImage" />
+                <div className={styles.imgContainer}>
+                    <img src={aboutMe.src} alt="aboutMeImage" />
+                </div>
+            </div>
+            <div className={styles.accolades}>
+                <p>
+                    Going Gold Choreography was designed to provide custom
+                    routine choreography to fit your team’s abilities as well as
+                    meticulously maxing out your score sheet potential.
+                </p>
             </div>
             <div className={styles.aboutMe}>
-                <img src={aboutMe.src} alt="aboutMeImage" />
-                <p></p>
+                <div className={styles.imgContainer}>
+                    <img src={meetMe.src} alt="meetMe" />
+                </div>
+                <div className={styles.overlayText}>
+                    <h3>More About Me</h3>
+                    <p>
+                        With 10+ years in the industry, GGC comes with the
+                        expertise and takes pride in supplying clients with
+                        innovative tools to take your team to the next level.
+                        From routine inception to the finishing touches, the
+                        goal is always for a “golden” outcome!
+                    </p>
+                    <h4>Accolades</h4>
+                    <p>
+                        Choreography Accolades include Pop Warner National
+                        Championships, State Qualifier and State Championships,
+                        Summit Wild-Card Bid Winner, Top 10 Summit Finishes,
+                        All-Star Regional and National Championships and Top
+                        Score, NCA Collegiate Top 5 Finishes.
+                    </p>
+                </div>
             </div>
         </section>
     )

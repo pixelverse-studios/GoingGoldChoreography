@@ -6,6 +6,7 @@
 
     .FooterContainer {
         @include PageSpacing.layout;
+        max-width: var(--max-width);
         padding: 1rem 2rem;
         display: flex;
         justify-content: space-between;
