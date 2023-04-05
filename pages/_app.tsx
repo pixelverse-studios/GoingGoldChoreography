@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { NextUIProvider } from '@nextui-org/react'
 
 import Page from '@/components/page'
-import logo from '@/assets/gg-logo.jpg'
+import logo from '@/assets/gg logo.jpg'
 import '@/styles/globals.scss'
 
 export default function App({ Component, pageProps }: AppProps) {

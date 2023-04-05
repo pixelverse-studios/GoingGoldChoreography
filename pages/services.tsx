@@ -1,5 +1,7 @@
+import Services from '@/views/Services'
+
 const ServicesPage = () => {
-    return <main>Services</main>
+    return <Services />
 }
 
 export default ServicesPage
