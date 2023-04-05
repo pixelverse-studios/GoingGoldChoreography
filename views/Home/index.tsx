@@ -21,9 +21,11 @@ const Home = () => {
             </div>
             <div className={styles.tbdBanner}>
                 <div>
-                    <GiTrafficCone />
-                    <em>UNDER CONSTRUCTION: </em> Our new site is coming soon!
-                    Notify me!
+                    <p>
+                        <GiTrafficCone />
+                        <em>UNDER CONSTRUCTION</em>
+                    </p>
+                    <p>Our new site is coming soon! Notify me!</p>
                 </div>
             </div>
         </section>

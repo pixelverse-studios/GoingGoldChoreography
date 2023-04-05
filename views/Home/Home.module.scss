@@ -30,12 +30,16 @@
         @include breakpoints.set-max-width('small') {
             display: flex;
             flex-direction: column-reverse;
+
+            img {
+                width: 18rem;
+                margin: auto;
+            }
         }
     }
 
     .tbdBanner {
         height: 6rem;
-        padding: 1rem 2rem;
         background-color: var(--off-brand-color);
 
         div {
@@ -44,6 +48,10 @@
             align-items: center;
             padding: 0 2rem;
 
+            p {
+                display: flex;
+                align-items: center;
+            }
             svg {
                 font-size: 4rem;
                 color: tomato;
@@ -53,6 +61,15 @@
             em {
                 font-weight: bold;
                 margin-right: 1rem;
+            }
+
+            @include breakpoints.set-max-width('small') {
+                flex-direction: column;
+                justify-content: center;
+                svg {
+                    font-size: 2rem;
+                    margin-right: 0.5rem;
+                }
             }
         }
     }

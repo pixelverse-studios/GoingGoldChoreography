@@ -17,10 +17,17 @@
         align-items: center;
 
         .navLogo {
-            font-size: 1.5rem;
+            font-size: 2.25rem;
             font-weight: bold;
-            width: 10rem;
             cursor: pointer;
+
+            a {
+                color: var(--secondary-brand-color);
+            }
+
+            @include breakpoints.set-max-width('medium') {
+                font-size: 1.7rem;
+            }
         }
 
         ul {
@@ -35,9 +42,9 @@
                 display: flex;
                 align-items: center;
                 font-size: 1.2rem;
-                color: var(--secondary-brand-color);
 
                 a {
+                    color: var(--secondary-brand-color);
                     transition: var(--general-hover);
 
                     &:hover {
@@ -76,29 +83,34 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-brand-color);
-    height: calc(var(--nav-height) / 2);
+    height: var(--mobile-nav-height);
     padding: 1rem 2rem;
     z-index: 5;
 
     .navLogo {
-        color: var(--secondary-brand-color);
+        a {
+            color: var(--secondary-brand-color);
+        }
     }
+
+    margin: 0;
 
     ul {
         z-index: 4;
         overflow: hidden;
         position: absolute;
         left: 0;
-        top: calc(var(--nav-height) / 2);
+        top: var(--mobile-nav-height);
         list-style: none;
         width: 100%;
         background-color: var(--primary-brand-color);
         color: var(--off-brand-color);
         transition: all 0.3s ease-in-out;
+        margin: 0;
 
         &.show {
             padding: 1rem;
-            height: 100%;
+            height: calc(100% - var(--mobile-nav-height));
         }
 
         &.hide {
