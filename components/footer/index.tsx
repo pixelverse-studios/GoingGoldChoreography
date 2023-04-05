@@ -1,6 +1,6 @@
 import { FaPhoneSquare, FaEnvelope, FaInstagram } from 'react-icons/fa'
 
-import logo from '@/assets/gg logo.jpg'
+import logo from '@/assets/gg-logo.jpg'
 import styles from './Footer.module.scss'
 
 const Footer = () => {
