@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { PopupButton } from 'react-calendly'
 
 import ContactWidget from '../contactWidget'
 import styles from './Nav.module.scss'
