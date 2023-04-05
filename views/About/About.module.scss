@@ -1,0 +1,114 @@
+@use 'styles/mixins/spacing' as PageSpacing;
+@use 'styles/mixins/breakpoints' as breakpoints;
+
+.AboutPage {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    background-color: var(--off-brand-color);
+
+    .meetMe {
+        @include PageSpacing.layout;
+        max-width: var(--max-width);
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+        align-content: flex-start;
+        grid-gap: 4rem;
+
+        .overlayText {
+            text-align: justify;
+            height: fit-content;
+            padding: 2rem 0;
+            margin: auto 0;
+
+            h3 {
+                text-align: left;
+                font-size: 2.3rem;
+                font-weight: 500;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .imgContainer {
+            height: 75vh;
+            img {
+                margin: auto;
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
+    .accolades {
+        @include PageSpacing.layout;
+        background-color: var(--primary-brand-color);
+
+        p {
+            padding: 1rem 2rem;
+            max-width: var(--max-width);
+            color: var(--secondary-brand-color);
+            margin: auto;
+        }
+    }
+
+    .aboutMe {
+        @include PageSpacing.layout;
+        max-width: var(--max-width);
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        align-content: flex-start;
+        grid-gap: 4rem;
+
+        .overlayText {
+            text-align: justify;
+            height: fit-content;
+            padding: 2rem 0;
+            margin: auto 0;
+
+            h3 {
+                text-align: left;
+                font-size: 2.3rem;
+                font-weight: 500;
+                margin-bottom: 2rem;
+            }
+
+            h4 {
+                text-align: left;
+                font-size: 1.8rem;
+                font-weight: 500;
+                margin: 2rem 0;
+            }
+        }
+
+        .imgContainer {
+            height: 75vh;
+            img {
+                margin: auto;
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
+    @include breakpoints.set-max-width('large') {
+        .meetMe,
+        .aboutMe {
+            grid-template-columns: 1fr;
+
+            .imgContainer {
+                height: 40vh;
+                margin: auto;
+            }
+
+            .overlayText {
+                text-align: center;
+                h3,
+                h4 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
