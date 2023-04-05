@@ -1,5 +1,5 @@
 import { GiTrafficCone } from 'react-icons/gi'
-import logo from '@/assets/gg logo.jpg'
+import logo from '@/assets/gg-logo.jpg'
 import styles from './Home.module.scss'
 
 const Home = () => {
