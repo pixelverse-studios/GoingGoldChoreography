@@ -18,9 +18,17 @@
         align-items: center;
 
         .navLogo {
-            font-size: 3rem;
+            font-size: 2.25rem;
             font-weight: bold;
             cursor: pointer;
+
+            a {
+                color: var(--secondary-brand-color);
+            }
+
+            @include breakpoints.set-max-width('medium') {
+                font-size: 1.7rem;
+            }
         }
 
         ul {
@@ -35,9 +43,9 @@
                 display: flex;
                 align-items: center;
                 font-size: 1.2rem;
-                color: var(--secondary-brand-color);
 
                 a {
+                    color: var(--secondary-brand-color);
                     transition: var(--general-hover);
 
                     &:hover {
@@ -81,7 +89,9 @@
     z-index: 5;
 
     .navLogo {
-        color: var(--secondary-brand-color);
+        a {
+            color: var(--secondary-brand-color);
+        }
     }
 
     margin: 0;
@@ -97,6 +107,7 @@
         background-color: var(--primary-brand-color);
         color: var(--off-brand-color);
         transition: all 0.3s ease-in-out;
+        margin: 0;
 
         &.show {
             padding: 1rem;
