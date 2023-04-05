@@ -1,6 +1,5 @@
 import { FaPhoneSquare, FaEnvelope, FaInstagram } from 'react-icons/fa'
 
-import socialQr from '@/assets/SocialQR.jpeg'
 import logo from '@/assets/gg logo.jpg'
 import styles from './Footer.module.scss'
 
