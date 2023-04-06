@@ -2,7 +2,7 @@ import { InlineWidget, useCalendlyEventListener } from 'react-calendly'
 import { Modal } from 'antd'
 import { useMutation } from '@apollo/client'
 
-import { ADD_NEWSLETTER_PARTICIPANT } from '@/lib/gql/mutations/newsletter'
+import { ADD_CALENDLY_PARTICIPANT } from '@/lib/gql/mutations/newsletter'
 import styles from './ContactWidget.module.scss'
 
 interface ContactWidgetProps {
@@ -13,7 +13,7 @@ interface ContactWidgetProps {
 const ContactWidget = ({ visible, setVisible }: ContactWidgetProps) => {
     const closeModal = () => setVisible(false)
 
-    const [addCalendlyParticipant] = useMutation(ADD_NEWSLETTER_PARTICIPANT, {
+    const [addCalendlyParticipant] = useMutation(ADD_CALENDLY_PARTICIPANT, {
         onCompleted(data) {
             console.log(data)
             // handle success
