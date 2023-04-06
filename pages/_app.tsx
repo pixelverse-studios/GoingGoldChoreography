@@ -1,9 +1,10 @@
 import type { AppProps } from 'next/app'
+import { ApolloProvider } from '@apollo/client'
 import Head from 'next/head'
-import { NextUIProvider } from '@nextui-org/react'
 
+import { client } from '@/lib/context/apolloProvider'
 import Page from '@/components/page'
-import logo from '@/assets/gg logo.jpg'
+import logo from '@/assets/gg-logo.jpg'
 import '@/styles/globals.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -21,11 +22,11 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
                 <link rel="icon" href={logo.src} />
             </Head>
-            <NextUIProvider>
+            <ApolloProvider client={client}>
                 <Page>
                     <Component {...pageProps} />
                 </Page>
-            </NextUIProvider>
+            </ApolloProvider>
         </>
     )
 }
