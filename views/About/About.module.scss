@@ -32,6 +32,8 @@
 
         .imgContainer {
             height: 100%;
+            max-height: 80vh;
+
             img {
                 margin: auto;
                 width: auto;
@@ -54,6 +56,7 @@
 
     .aboutMe {
         @include PageSpacing.layout;
+        height: 80vh;
         max-width: var(--max-width);
         padding: 0 2rem;
         display: grid;
@@ -84,6 +87,8 @@
 
         .imgContainer {
             height: 100%;
+            max-height: 80vh;
+
             img {
                 margin: auto;
                 width: auto;
