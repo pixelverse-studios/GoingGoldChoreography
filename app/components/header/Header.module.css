@@ -2,7 +2,7 @@
     padding: 1.5rem var(--horizontal-padding);
     position: absolute;
     background-color: black;
-    border-bottom: 2px solid var(--primary);
+    border-bottom: var(--border-size) solid var(--primary);
     display: flex;
     gap: 1rem;
     justify-content: space-between;
@@ -12,11 +12,23 @@
     right: 0;
     margin: auto;
 
-    span {
+    .logo {
         font-size: 2rem;
         font-weight: 600;
         color: var(--primary);
+        cursor: pointer;
     }
+
+    /* .bigmac {
+        & > div {
+            background-color: var(--primary);
+
+            &::before,
+            &::after {
+                background-color: var(--primary);
+            }
+        }
+    } */
 
     ul {
         color: var(--off-white);
@@ -25,15 +37,56 @@
         gap: 1rem;
         font-size: 1.3rem;
         font-weight: 500;
+        cursor: pointer;
 
         li:not(:global(.callToAction)) {
             transition: var(--hover);
-            border-bottom: 2px solid transparent;
+            border-bottom: var(--border-size) solid transparent;
             color: var(--primary);
 
             &.active,
             &:hover {
                 border-color: var(--primary);
+            }
+        }
+    }
+}
+
+.mobileNavDrawer {
+    & > div {
+        top: 5.2rem;
+    }
+
+    & > div:nth-of-type(2) {
+        section {
+            height: calc(100dvh - 5.2rem);
+            background-color: black;
+
+            & > div {
+                height: 100%;
+                padding: var(--horizontal-padding);
+
+                ul {
+                    color: var(--off-white);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 2.5rem;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+
+                    li:not(:global(.callToAction)) {
+                        cursor: pointer;
+                        transition: var(--hover);
+                        border-bottom: var(--border-size) solid transparent;
+                        color: var(--primary);
+
+                        &.active,
+                        &:hover {
+                            border-color: var(--primary);
+                        }
+                    }
+                }
             }
         }
     }

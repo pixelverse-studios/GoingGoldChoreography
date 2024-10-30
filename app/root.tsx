@@ -7,9 +7,17 @@ import {
     useLoaderData
 } from '@remix-run/react'
 import type { LinksFunction, LoaderFunction } from '@remix-run/node'
+import { SnackbarProvider } from 'notistack'
 import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core'
+import {
+    FaCheckDouble,
+    FaTriangleExclamation,
+    FaCircleInfo,
+    FaBug
+} from 'react-icons/fa6'
 
 import Header from './components/header'
+import Footer from './components/footer'
 
 import './tailwind.css'
 import '@mantine/core/styles.css'
@@ -41,18 +49,19 @@ const theme = createTheme({
     fontFamily: 'IBM Plex Sans',
     colors: {
         gold: [
-            '#fdf9f2',
-            '#f9f0df',
-            '#f5e6cb',
-            '#f1ddb7',
-            '#edd3a3',
-            '#e9c98f',
-            '#ba9f72',
-            '#8c7555',
-            '#5d4c38',
-            '#2f221c'
+            '#faf3e0',
+            '#f5e7c2',
+            '#f0dba4',
+            '#ebcf86',
+            '#e7c368',
+            '#e3c970',
+            '#d3b45a',
+            '#b29448',
+            '#8c7237',
+            '#574320'
         ]
     },
+    primaryColor: 'gold',
     radius: {
         custom: '8px'
     },
@@ -84,7 +93,7 @@ export default function App() {
                     <main>
                         <Outlet />
                     </main>
-                    <footer>FOOTER</footer>
+                    <Footer />
                 </MantineProvider>
                 <ScrollRestoration />
                 <Scripts />

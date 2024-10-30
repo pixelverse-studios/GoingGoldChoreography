@@ -1,22 +1,18 @@
-import { useCallback } from 'react'
-import { useDisclosure } from '@mantine/hooks'
-import { Modal, Button, TextInput } from '@mantine/core'
-import { FaAt, FaUser, FaUserTie } from 'react-icons/fa6'
+// import { useCallback } from 'react'
 
+import CallToAction from '~/components/callToAction'
 import HeroLogo from '../../assets/gg-logo.jpg'
 import styles from './Home.module.css'
 
 const HomePage = () => {
-    const [opened, { open, close }] = useDisclosure(false)
-
-    const onSubscribe = useCallback(async () => {
-        try {
-            // set loading
-            console.log(window.ENV.API_HOST)
-        } catch (error) {
-            // handle error
-        }
-    }, [])
+    // const onSubscribe = useCallback(async () => {
+    //     try {
+    //         // set loading
+    //         console.log(window.ENV.API_HOST)
+    //     } catch (error) {
+    //         // handle error
+    //     }
+    // }, [])
 
     return (
         <div className={styles.homePage}>
@@ -33,44 +29,7 @@ const HomePage = () => {
                 <p className={styles.ctaLabel}>
                     Stay up to date with everything going on!
                 </p>
-                <button onClick={open} className="callToAction">
-                    Sign Up
-                </button>
-                <Modal
-                    opened={opened}
-                    onClose={close}
-                    title="Mailing List"
-                    className={styles.newsletterModal}>
-                    <form>
-                        <div className={styles.doubleFields}>
-                            <TextInput
-                                size="md"
-                                leftSectionPointerEvents="none"
-                                leftSection={<FaUser />}
-                                variant="filled"
-                                label="First Name"
-                            />
-                            <TextInput
-                                size="md"
-                                leftSectionPointerEvents="none"
-                                leftSection={<FaUserTie />}
-                                variant="filled"
-                                label="Last Name"
-                            />
-                        </div>
-                        <TextInput
-                            size="md"
-                            leftSectionPointerEvents="none"
-                            leftSection={<FaAt />}
-                            variant="filled"
-                            label="Email"
-                        />
-                        <div className={styles.buttons}>
-                            <button className="callToAction">Submit</button>
-                            <button className={styles.cancel}>Cancel</button>
-                        </div>
-                    </form>
-                </Modal>
+                <CallToAction buttonLabel="Sign Up" />
             </section>
             <img src={HeroLogo} alt="going-gold-logo" />
         </div>

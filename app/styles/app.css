@@ -11,7 +11,12 @@
     --hover: 0.25s ease-in-out;
     --max-width: 1500px;
     --rounded-edges: 8px;
+    --border-size: 1px;
     --horizontal-padding: 4rem;
+
+    @media screen and (max-width: 800px) {
+        --horizontal-padding: 2rem;
+    }
 }
 
 html,
@@ -24,30 +29,37 @@ body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr auto;
     background-color: black;
 }
 
 main {
-    min-height: calc(100dvh - var(--header-height) - var(--footer-height));
     padding-top: var(--header-height);
     max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
 }
 
 .callToAction {
-    border: 2px solid transparent;
+    border: var(--border-size) solid var(--off-black);
     border-radius: var(--rounded-edges);
     background-color: var(--primary);
     color: var(--off-black);
     transition: var(--hover);
     padding: 0.5rem;
     cursor: pointer;
+    font-weight: 500;
 
     &:hover {
-        border-color: var(--primary);
-        background-color: var(--off-black);
+        background-color: black;
         color: var(--primary);
+    }
+
+    &:disabled {
+        color: var(--off-black);
+        background-color: darkgray;
+        cursor: not-allowed;
     }
 }
 
@@ -61,7 +73,5 @@ h1 {
     font-size: 1.7rem;
     color: var(--primary);
     margin-bottom: 1rem;
-}
-
-footer {
+    line-height: 2rem;
 }

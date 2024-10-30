@@ -1,0 +1,47 @@
+.ctaModal {
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .doubleFields {
+            display: flex;
+            gap: 1rem;
+
+            & > * {
+                flex: 1;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+
+            .cancel {
+                border: var(--border-size) solid var(--primary);
+                border-radius: var(--rounded-edges);
+                background-color: var(--off-black);
+                color: var(--primary);
+                transition: var(--hover);
+                padding: 0.5rem;
+                cursor: pointer;
+
+                &:hover {
+                    border-color: var(--off-black);
+                    background-color: var(--primary);
+                    color: var(--off-black);
+                }
+            }
+            button:disabled {
+                color: var(--off-white);
+                background-color: #3b3b3b;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
