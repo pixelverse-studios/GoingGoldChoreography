@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa6'
 
 import CallToAction from '../callToAction'
-import Logo from '../../assets/gg-logo.jpg'
+import Logo from '@/assets/gg-logo.jpg'
 import styles from './Footer.module.scss'
 
 const Footer = () => {
