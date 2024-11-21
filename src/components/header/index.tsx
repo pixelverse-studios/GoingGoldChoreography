@@ -1,5 +1,6 @@
 'use client'
-import { useMemo, useCallback } from 'react'
+
+import { useState, useMemo, useCallback, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Drawer, Burger } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
@@ -46,13 +47,28 @@ const Header = () => {
   const router = useRouter()
   const pathname = usePathname()
   const windowWidth = useWindowWidth()
+
+  const [isClient, setIsClient] = useState(false)
+
   const [opened, { open, close }] = useDisclosure(false)
 
+  useEffect(() => {
+    if (!isClient) setIsClient(true)
+  }, [isClient])
+
   const logoText = useMemo(
-    () => (windowWidth <= 1000 ? 'GGC' : 'Going Gold Choreography'),
-    [windowWidth]
+    () =>
+      !isClient
+        ? 'GGC'
+        : windowWidth <= 1000
+          ? 'GGC'
+          : 'Going Gold Choreography',
+    [windowWidth, isClient]
   )
-  const showBurger = useMemo(() => windowWidth < 750, [windowWidth])
+  const showBurger = useMemo(
+    () => (!isClient ? true : windowWidth < 750),
+    [isClient, windowWidth]
+  )
 
   const onRouteClick = useCallback(
     (to: string) => {
@@ -66,9 +82,9 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <span className={styles.logo} onClick={() => onRouteClick('/')}>
+      <p className={styles.logo} onClick={() => onRouteClick('/')}>
         {logoText}
-      </span>
+      </p>
       {showBurger ? (
         <>
           <Burger
