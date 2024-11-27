@@ -82,30 +82,32 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <p className={styles.logo} onClick={() => onRouteClick('/')}>
-        {logoText}
-      </p>
-      {showBurger ? (
-        <>
-          <Burger
-            className={styles.bigmac}
-            onClick={opened ? close : open}
-            opened={opened}
-          />
-          <Drawer
-            overlayProps={{ backgroundOpacity: 0, blur: 0 }}
-            className={styles.mobileNavDrawer}
-            size="100%"
-            position="bottom"
-            opened={opened}
-            onClose={close}
-            withCloseButton={false}>
-            <NavLinks onClick={onRouteClick} path={pathname} />
-          </Drawer>
-        </>
-      ) : (
-        <NavLinks onClick={onRouteClick} path={pathname} />
-      )}
+      <nav>
+        <p className={styles.logo} onClick={() => onRouteClick('/')}>
+          {logoText}
+        </p>
+        {showBurger ? (
+          <>
+            <Burger
+              className={styles.bigmac}
+              onClick={opened ? close : open}
+              opened={opened}
+            />
+            <Drawer
+              overlayProps={{ backgroundOpacity: 0, blur: 0 }}
+              className={styles.mobileNavDrawer}
+              size="100%"
+              position="bottom"
+              opened={opened}
+              onClose={close}
+              withCloseButton={false}>
+              <NavLinks onClick={onRouteClick} path={pathname} />
+            </Drawer>
+          </>
+        ) : (
+          <NavLinks onClick={onRouteClick} path={pathname} />
+        )}
+      </nav>
     </header>
   )
 }

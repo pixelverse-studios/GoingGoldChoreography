@@ -5,6 +5,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 
 import '@mantine/core/styles.css'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import '@/styles/app.scss'
 
 export const metadata: Metadata = {
@@ -46,7 +47,7 @@ export default function App({ children }: { children: React.ReactNode }) {
       <body>
         <MantineProvider theme={theme} defaultColorScheme="dark">
           <Header />
-          <main>{children}</main>
+          {children}
           <Footer />
         </MantineProvider>
       </body>

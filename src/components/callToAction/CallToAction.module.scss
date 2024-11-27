@@ -25,20 +25,20 @@
             .cancel {
                 border: var(--border-size) solid var(--primary);
                 border-radius: var(--rounded-edges);
-                background-color: var(--off-black);
+                background-color: var(--black);
                 color: var(--primary);
                 transition: var(--hover);
                 padding: 0.5rem;
                 cursor: pointer;
 
                 &:hover {
-                    border-color: var(--off-black);
+                    border-color: var(--black);
                     background-color: var(--primary);
-                    color: var(--off-black);
+                    color: var(--black);
                 }
             }
             button:disabled {
-                color: var(--off-white);
+                color: var(--white);
                 background-color: #3b3b3b;
                 cursor: not-allowed;
             }

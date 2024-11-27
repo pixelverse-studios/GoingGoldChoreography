@@ -6,7 +6,7 @@
     margin: auto;
     max-width: var(--max-width);
     height: 100%;
-    color: var(--off-black);
+    color: var(--black);
     padding: 2rem var(--horizontal-padding);
     display: grid;
     grid-template-rows: 1fr 2rem;
@@ -40,14 +40,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--off-black);
+            color: var(--black);
             background-color: var(--primary);
-            border: var(--border-size) solid var(--off-black);
+            border: var(--border-size) solid var(--black);
             border-radius: 50%;
             transition: var(--hover);
 
             &:hover {
-              background-color: var(--off-black);
+              background-color: var(--black);
               color: var(--primary);
             }
           }

@@ -2,76 +2,79 @@
 @import './reset.scss';
 
 :root {
-    --primary: #e3c970;
-    --off-white: #f6f6f6;
-    --off-black: #1e1e1e;
+  --primary: #e3c970;
+  --white: #f6f6f6;
+  --black: #1e1e1e;
 
-    --header-height: 5.5rem;
-    --footer-height: 2rem;
-    --hover: 0.25s ease-in-out;
-    --max-width: 1500px;
-    --rounded-edges: 8px;
-    --border-size: 1px;
-    --horizontal-padding: 4rem;
+  --header-height: 5.5rem;
+  --footer-height: 2rem;
+  --hover: 0.25s ease-in-out;
+  --max-width: 1500px;
+  --rounded-edges: 8px;
+  --border-size: 1px;
+  --horizontal-padding: 4rem;
+  --vertical-padding: 2rem;
 
-    @media screen and (max-width: 800px) {
-        --horizontal-padding: 2rem;
-    }
+  @media screen and (max-width: 800px) {
+    --horizontal-padding: 2rem;
+  }
 }
 
 html,
 body {
-    font-size: 16px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-style: normal;
-    height: 100%;
-    line-height: 1.4rem;
+  font-size: 16px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  height: 100%;
+  line-height: 1.4rem;
 }
 
 body {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    background-color: black !important;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-color: black !important;
 }
 
 main {
-    padding-top: var(--header-height);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    width: 100%;
+  padding-top: var(--header-height);
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
 }
 
 .callToAction {
-    border: var(--border-size) solid var(--off-black);
-    border-radius: var(--rounded-edges);
-    background-color: var(--primary);
-    color: var(--off-black);
-    transition: var(--hover);
-    padding: 0.5rem;
-    cursor: pointer;
-    font-weight: 500;
+  border: var(--border-size) solid var(--black);
+  border-radius: var(--rounded-edges);
+  background-color: var(--primary);
+  color: var(--black);
+  transition: var(--hover);
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
 
-    &:hover {
-        background-color: black;
-        color: var(--primary);
-    }
+  &:hover {
+    background-color: black;
+    color: var(--primary);
+  }
 
-    &:disabled {
-        color: var(--off-black);
-        background-color: darkgray;
-        cursor: not-allowed;
-    }
+  &:disabled {
+    color: var(--black);
+    background-color: darkgray;
+    cursor: not-allowed;
+  }
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 h1 {
-    font-weight: 800;
-    font-size: 1.7rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    line-height: 2rem;
+  font-weight: 800;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
 }
