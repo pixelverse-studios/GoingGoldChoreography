@@ -7,23 +7,35 @@ const HTTP = {
   CONFLICT: 409
 }
 
-export const handleResponseStatus = (res: any, alert: any, topic: string) => {
+export const handleResponseStatus = (
+  res: any,
+  alert: any,
+  successMsg: string
+) => {
   const { SUCCESS, SUCCESS_NO_CONTENT, BAD_REQUEST, UNAUTHORIZED, CONFLICT } =
     HTTP
   switch (res.status) {
     case SUCCESS:
     case SUCCESS_NO_CONTENT:
-      alert(`${topic} success`, { variant: 'success' })
-      break
+      return alert.show({
+        color: 'blue',
+        title: 'Success',
+        message: successMsg
+      })
     case BAD_REQUEST:
-      alert(`${topic} failed`, { variant: 'error' })
-      break
+      return alert.show({ color: 'red', title: 'Error', message: res.message })
     case UNAUTHORIZED:
-      alert(`Unauthorized for ${topic}`, { variant: 'error' })
-      break
+      return alert.show({
+        color: 'red',
+        title: 'Unauthorized',
+        message: res.message
+      })
     case CONFLICT:
-      alert(`Record already exists for ${topic}`, { variant: 'warning' })
-      break
+      return alert.show({
+        color: 'red',
+        title: 'Duplicate',
+        message: res.message
+      })
     default:
       break
   }

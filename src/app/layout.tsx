@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core'
+import { Notifications } from '@mantine/notifications'
 
 import Header from '@/components/header'
 import Footer from '@/components/footer'
@@ -49,6 +50,7 @@ export default function App({ children }: { children: React.ReactNode }) {
           <Header />
           {children}
           <Footer />
+          <Notifications autoClose={5000} position="top-right" />
         </MantineProvider>
       </body>
     </html>

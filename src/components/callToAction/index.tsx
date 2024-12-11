@@ -5,8 +5,9 @@ import { useDisclosure } from '@mantine/hooks'
 import { Modal, TextInput, LoadingOverlay } from '@mantine/core'
 import { hasLength, isEmail, useForm } from '@mantine/form'
 import { FaAt, FaUser, FaUserTie } from 'react-icons/fa6'
+import { notifications } from '@mantine/notifications'
 
-// import { handleResponseStatus } from '@/utls/http'
+import { handleResponseStatus } from '@/utls/http'
 import styles from './CallToAction.module.scss'
 
 const CallToAction = ({ buttonLabel }: { buttonLabel: string }) => {
@@ -30,30 +31,27 @@ const CallToAction = ({ buttonLabel }: { buttonLabel: string }) => {
       setLoading(true)
 
       try {
-        const { API_HOST, SLUG } = process.env
-        const res = await fetch(`${API_HOST}/newsletter/${SLUG}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(form.getValues())
-        })
-        console.log(res)
-        // return handleResponseStatus(
-        //     res,
-        //     enqueueSnackbar,
-        //     'Newsletter subscription'
-        // )
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_HOST}/newsletter/${process.env.NEXT_PUBLIC_SLUG}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form.getValues())
+          }
+        )
+        return handleResponseStatus(res, notifications, 'Subscribed')
       } catch (error) {
-        console.log(error)
-        // enqueueSnackbar(
-        //     'There was an issue. Please reach out to me if the issue persists.',
-        //     {
-        //         variant: 'error'
-        //     }
-        // )
+        console.warn(error)
+        notifications.show({
+          color: 'red',
+          title: 'Error',
+          message: 'There was an issue trying to subscribe to the newsletter'
+        })
       } finally {
         setLoading(false)
+        form.reset()
         close()
       }
     },

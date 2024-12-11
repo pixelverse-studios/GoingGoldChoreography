@@ -2,8 +2,9 @@
 
 import { useState, useMemo, useCallback, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Drawer, Burger } from '@mantine/core'
+import { Drawer, Burger, Modal } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
+import { InlineWidget } from 'react-calendly'
 
 import useWindowWidth from '@/utls/hooks/useWindowWidth'
 import styles from './Header.module.scss'
@@ -51,6 +52,8 @@ const Header = () => {
   const [isClient, setIsClient] = useState(false)
 
   const [opened, { open, close }] = useDisclosure(false)
+  const [showModal, { open: openModal, close: closeModal }] =
+    useDisclosure(false)
 
   useEffect(() => {
     if (!isClient) setIsClient(true)
@@ -75,9 +78,13 @@ const Header = () => {
       if (opened) {
         close()
       }
-      router.push(to)
+      if (to === CONTACT.to) {
+        openModal()
+      } else {
+        router.push(to)
+      }
     },
-    [close, opened, router]
+    [close, openModal, opened, router]
   )
 
   return (
@@ -108,6 +115,17 @@ const Header = () => {
           <NavLinks onClick={onRouteClick} path={pathname} />
         )}
       </nav>
+      <Modal
+        centered
+        overlayProps={{
+          backgroundOpacity: 0.55,
+          blur: 3
+        }}
+        opened={showModal}
+        onClose={closeModal}
+        title="Sign Up for a meeting">
+        <InlineWidget url="https://calendly.com/goinggoldchoreography" />
+      </Modal>
     </header>
   )
 }

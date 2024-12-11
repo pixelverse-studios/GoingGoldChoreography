@@ -78,3 +78,7 @@ h1 {
   margin-bottom: 1rem;
   line-height: 2rem;
 }
+
+.calendly-inline-widget iframe {
+  border-radius: var(--rounded-edges);
+}
