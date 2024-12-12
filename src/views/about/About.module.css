@@ -14,20 +14,19 @@
   padding: 3rem;
   display: flex;
   gap: 4rem;
+  height: 100%;
+  align-items: center;
 
   & article {
-    border-radius: var(--rounded-edges);
-    background-color: var(--black);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
     z-index: 2;
     line-height: 1.2;
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     height: fit-content;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 0.5rem;
     border-radius: var(--rounded-edges);
     padding: 2rem;
 
@@ -41,8 +40,8 @@
   & img {
     border-radius: 9rem;
     width: 100%;
-    width: 19rem;
-    height: auto;
+    width: auto;
+    height: 30rem;
     z-index: 2;
     object-fit: contain;
     border: 3px solid var(--primary);
@@ -83,9 +82,18 @@
   }
 }
 
-.blob {
+.topBlob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transform: rotate(180deg);
+}
+.bottomBlob {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 0;
+  height: auto;
+  width: 12rem;
 }
