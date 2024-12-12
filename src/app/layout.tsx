@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Montserrat } from 'next/font/google'
 import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
 
@@ -37,9 +38,14 @@ const theme = createTheme({
   defaultRadius: 'custom'
 })
 
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+})
+
 export default function App({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${montserrat.className}`}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,9 +1,7 @@
 'use client'
 
+import AboutPage from '@/views/about'
+
 export default function Home() {
-  return (
-    <div>
-      <h1>About page placeholder</h1>
-    </div>
-  )
+  return <AboutPage />
 }
