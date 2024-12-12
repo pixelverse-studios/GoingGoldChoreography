@@ -11,7 +11,7 @@ const AboutPage = () => {
       <section className={`page`}>
         <section className={classes.description}>
           <img src={Portrait.src} alt="portrait of allie" />
-          <article>
+          <article className={classes.card}>
             <h2>Meet Alli</h2>
             <p>
               Alli has Pop Warner, High School, All-Star, and Collegiate
@@ -22,6 +22,10 @@ const AboutPage = () => {
               Warner, AYC, YCADA. Experience with NCA, UCA, Jamz, NAIA,
               NYSPHSAA, NJCDCA, AACCA. Judges certification across all levels
             </p>
+          </article>
+        </section>
+        <section className={classes.cards}>
+          <article className={classes.card}>
             <p>
               With 10+ years in the industry, GGC comes with the expertise and
               takes pride in supplying clients with innovative tools to take
@@ -29,6 +33,8 @@ const AboutPage = () => {
               finishing touches, the goal is always for a &apos;golden&apos;
               outcome!
             </p>
+          </article>
+          <article className={classes.card}>
             <p>
               Going Gold Choreography was designed to provide custom routine
               choreography to fit your team&apos;s abilities as well as
@@ -51,8 +57,6 @@ const AboutPage = () => {
               <FaStarHalfAlt />
               <p>Summit Wild-Card Bid Winner</p>
             </li>
-          </ul>
-          <ul>
             <li>
               <FaStarHalfAlt />
               <p>Top 10 Summit Finishes</p>
