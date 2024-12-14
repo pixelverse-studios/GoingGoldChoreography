@@ -71,9 +71,9 @@ const AboutPage = () => {
             </li>
           </ul>
         </section>
-        <img className={classes.topBlob} src={Blob.src} alt="blob" />
-        <img className={classes.bottomBlob} src={Blob.src} alt="blob" />
       </section>
+      <img className={classes.topBlob} src={Blob.src} alt="blob" />
+      <img className={classes.bottomBlob} src={Blob.src} alt="blob" />
     </main>
   )
 }
