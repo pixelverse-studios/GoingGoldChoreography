@@ -2,7 +2,7 @@
 // import { useCallback } from 'react'
 // import Image from 'next/image'
 
-import CallToAction from '@/components/callToAction'
+import Newsletter from '@/components/newsletter'
 import HeroLogo from '@/assets/gg-logo.jpg'
 import styles from './Home.module.scss'
 
@@ -32,7 +32,7 @@ const HomePage = () => {
             <p className={styles.ctaLabel}>
               Stay up to date with everything going on!
             </p>
-            <CallToAction buttonLabel="Sign Up" />
+            <Newsletter buttonLabel="Sign Up" />
           </section>
           <img src={HeroLogo.src} alt="going-gold-logo" />
         </div>

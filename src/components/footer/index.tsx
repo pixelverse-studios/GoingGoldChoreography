@@ -6,7 +6,7 @@ import {
   FaFacebook
 } from 'react-icons/fa6'
 
-import CallToAction from '../callToAction'
+import Newsletter from '../newsletter'
 import Logo from '../../assets/gg-logo.jpg'
 import styles from './Footer.module.scss'
 
@@ -38,7 +38,7 @@ const Footer = () => {
                 <FaFacebook />
               </a>
             </div>
-            <CallToAction buttonLabel="Join the newsletter" />
+            <Newsletter buttonLabel="Join the newsletter" />
           </div>
         </section>
         <section className={styles.copyright}>

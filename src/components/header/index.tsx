@@ -2,10 +2,10 @@
 
 import { useState, useMemo, useCallback, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Drawer, Burger, Modal } from '@mantine/core'
+import { Drawer, Burger } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { InlineWidget } from 'react-calendly'
 
+import CallToAction from '../callToAction'
 import useWindowWidth from '@/utls/hooks/useWindowWidth'
 import styles from './Header.module.scss'
 
@@ -115,17 +115,7 @@ const Header = () => {
           <NavLinks onClick={onRouteClick} path={pathname} />
         )}
       </nav>
-      <Modal
-        centered
-        overlayProps={{
-          backgroundOpacity: 0.55,
-          blur: 3
-        }}
-        opened={showModal}
-        onClose={closeModal}
-        title="Sign Up for a meeting">
-        <InlineWidget url="https://calendly.com/goinggoldchoreography" />
-      </Modal>
+      <CallToAction show={showModal} onClose={closeModal} />
     </header>
   )
 }

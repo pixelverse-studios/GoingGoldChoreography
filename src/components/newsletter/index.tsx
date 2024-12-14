@@ -8,9 +8,9 @@ import { FaAt, FaUser, FaUserTie } from 'react-icons/fa6'
 import { notifications } from '@mantine/notifications'
 
 import { handleResponseStatus } from '@/utls/http'
-import styles from './CallToAction.module.scss'
+import styles from './Newsletter.module.scss'
 
-const CallToAction = ({ buttonLabel }: { buttonLabel: string }) => {
+const Newsletter = ({ buttonLabel }: { buttonLabel: string }) => {
   const [opened, { open, close }] = useDisclosure(false)
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -114,4 +114,4 @@ const CallToAction = ({ buttonLabel }: { buttonLabel: string }) => {
   )
 }
 
-export default CallToAction
+export default Newsletter
