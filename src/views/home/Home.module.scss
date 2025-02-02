@@ -1,0 +1,54 @@
+.homePage {
+  padding: var(--horizontal-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+
+  h1 {
+    color: var(--primary);
+  }
+
+  img {
+    max-height: 25rem;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    color: var(--primary);
+
+    .ctaLabel {
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    flex-wrap: wrap-reverse;
+    align-items: flex-end;
+
+    img {
+      margin: auto;
+      height: 14rem;
+      width: auto;
+    }
+
+    .hero {
+      gap: 1rem;
+
+      .ctaLabel {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
