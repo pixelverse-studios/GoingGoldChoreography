@@ -22,11 +22,11 @@ const Footer = () => {
               <a href="tel:315-440-1386">
                 <FaPhone />
               </a>
-              <a href="www.instagram.com/goinggoldchoreography" target="_blank">
+              <a href="mailto:goinggoldchoreography@gmail.com">
                 <FaRegEnvelope />
               </a>
               <a
-                href="mailto:goinggoldchoreography@gmail.com"
+                href="https://www.instagram.com/goinggoldchoreography"
                 target="_blank"
                 rel="noreferrer">
                 <FaInstagram />
